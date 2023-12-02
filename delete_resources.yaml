@@ -3,22 +3,22 @@
   hosts: localhost
   gather_facts: false
   tasks:
-    - name: Delete RDS Instance
-      amazon.rds.rds_instance:
-        instance_name: wordpressappdb
-        state: absent
-      register: rds_result
+  - name: Delete RDS Instance
+    amazon.rds.rds_instance:
+      instance_name: wordpressappdb
+      state: absent
+    register: rds_result
 
-    - name: Delete EC2 Instance
-      ec2_instance:
-        name: WebAppServer
-        state: absent
-      register: ec2_result
+  - name: Delete EC2 Instance
+    ec2_instance:
+      name: WebAppServer
+      state: absent
+    register: ec2_result
 
-    - name: Display RDS Deletion Result
-      debug:
-        var: rds_result
+  - name: Display RDS Deletion Result
+    debug:
+      var: rds_result
 
-    - name: Display EC2 Deletion Result
-      debug:
-        var: ec2_result
+  - name: Display EC2 Deletion Result
+    debug:
+      var: ec2_result
