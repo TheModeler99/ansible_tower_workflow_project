@@ -6,7 +6,9 @@
   - name: Delete RDS Instance
     rds_instance:
       db_instance_identifier: wordpressappdb
+      region: us-east-1
       state: absent
+      skip_final_snapshot: true
     register: rds_result
 
   - name: Delete EC2 Instance
