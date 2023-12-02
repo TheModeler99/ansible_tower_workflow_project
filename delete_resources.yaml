@@ -16,6 +16,7 @@
       instance_tags:
         Name: WebAppServer
       state: absent
+      region: us-east-1
     register: ec2_result
 
   - name: Display RDS Deletion Result
