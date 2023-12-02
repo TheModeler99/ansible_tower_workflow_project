@@ -4,13 +4,13 @@
   gather_facts: false
   tasks:
     - name: Delete RDS Instance
-      amazon.rds.rds_instance:
+      rds_instance:
         instance_name: wordpressappdb
         state: absent
       register: rds_result
 
     - name: Delete EC2 Instance
-      ec2_instance:
+      ec2:
         name: WebAppServer
         state: absent
       register: ec2_result
