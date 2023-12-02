@@ -5,7 +5,7 @@
   tasks:
   - name: Delete RDS Instance
     rds_instance:
-      instance_name: wordpressappdb
+      db_instance_identifier: wordpressappdb
       state: absent
     register: rds_result
 
