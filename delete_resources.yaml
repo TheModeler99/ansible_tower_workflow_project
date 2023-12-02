@@ -13,7 +13,9 @@
 
   - name: Delete EC2 Instance
     ec2:
-      name: WebAppServer
+      instance_tags:
+        - key: Name
+          value: WebAppServer
       state: absent
     register: ec2_result
 
